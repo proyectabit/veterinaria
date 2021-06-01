@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+<body>
+    <div id="carousel" style="margin-top: 50px;">
+        <div class="row-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../static/img/banner1.jpg" th:src="@{/img/banner1.jpg}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/img/banner2.jpg" th:src="@{/img/banner2.jpg}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/img/banner3.jpg" th:src="@{/img/banner3.jpg}" alt="First slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 mx-auto mt-4 mb-3">
+                <h2 class="font-weight-bold">¿Qué ofrecemos?</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="info info-horizontal p-0">
+                    <div class="icon icon-rose"><i class="material-icons">group_work</i></div>
+                    <div class="description">
+                        <h4 class="info-title">Cirugía General</h4>
+                        <p>The moment you use Material Kit, you know you’ve never felt anything like it. With a single use, this powerfull UI Kit lets you do more than ever before. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info info-horizontal p-0">
+                    <div class="icon icon-rose"><i class="material-icons">group_work</i></div>
+                    <div class="description">
+                        <h4 class="info-title">Odontología</h4>
+                        <p>The moment you use Material Kit, you know you’ve never felt anything like it. With a single use, this powerfull UI Kit lets you do more than ever before. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info info-horizontal p-0">
+                    <div class="icon icon-rose"><i class="material-icons">group_work</i></div>
+                    <div class="description">
+                        <h4 class="info-title">Oftalmología</h4>
+                        <p>The moment you use Material Kit, you know you’ve never felt anything like it. With a single use, this powerfull UI Kit lets you do more than ever before. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info info-horizontal p-0">
+                    <div class="icon icon-rose"><i class="material-icons">group_work</i></div>
+                    <div class="description">
+                        <h4 class="info-title">Oftalmología</h4>
+                        <p>The moment you use Material Kit, you know you’ve never felt anything like it. With a single use, this powerfull UI Kit lets you do more than ever before. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info info-horizontal p-0">
+                    <div class="icon icon-rose"><i class="material-icons">group_work</i></div>
+                    <div class="description">
+                        <h4 class="info-title">Cirugía</h4>
+                        <p>The moment you use Material Kit, you know you’ve never felt anything like it. With a single use, this powerfull UI Kit lets you do more than ever before. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mt-3">
+            <div class="col-sm-8 col-md-5 mx-auto">
+                <a class="btn btn-primary" href="/servicios">Ver más</a>
+            </div>
+        </div>
+    
+        <div class="row text-center mt-5">
+            <div class="col-md-8 mx-auto text-center">
+                <h2 class="font-weight-bold">Nuestras sedes</h2>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container-fluid text-center mb-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#!">
+                            <img class="img-raised rounded img-fluid" src="../static/img/sede1.png" th:src="@{/img/sede1.png}" alt="Rounded Image">
+                        </a>
+                        <button class="btn btn-link btn-primary btn-lg text-dark font-weight-bold">SEDE LOS OLIVOS</button>
+                        <p class="text-center">
+                            Av. Palmeras 5410, Los Olivos <br />
+                            Whatsapp: 999 999 999 <br />
+                            01 999 9999
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#!">
+                            <img class="img-raised rounded img-fluid" src="../static/img/sede2.png" th:src="@{/img/sede2.png}" alt="Rounded Image">
+                        </a>
+                        <button class="btn btn-link btn-primary btn-lg text-dark font-weight-bold">SEDE SURCO</button>
+                        <p class="text-center">
+                            Av. Palmeras 5410, Surco <br />
+                            Whatsapp: 999 999 999 <br />
+                            01 999 9999
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#!">
+                            <img class="img-raised rounded img-fluid" src="../static/img/sede3.png" th:src="@{/img/sede3.png}" alt="Rounded Image">
+                        </a>
+                        <button class="btn btn-link btn-primary btn-lg text-dark font-weight-bold">SEDE LOS OLIVOS</button>
+                        <p class="text-center">
+                            Av. Palmeras 5410, Los Olivos <br />
+                            Whatsapp: 999 999 999 <br />
+                            01 999 9999
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#!">
+                            <img class="img-raised rounded img-fluid" src="../static/img/sede4.png" th:src="@{/img/sede4.png}" alt="Rounded Image">
+                        </a>
+                        <button class="btn btn-link btn-primary btn-lg text-dark font-weight-bold">SEDE SURCO</button>
+                        <p class="text-center">
+                            Av. Palmeras 5410, Surco <br />
+                            Whatsapp: 999 999 999 <br />
+                            01 999 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

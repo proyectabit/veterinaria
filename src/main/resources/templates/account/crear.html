@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'crear')}">
+<body>
+    <div class="section section-signup page-header" style="margin-top: 50px; background-image: url('https://www.hola.com/imagenes/viajes/2014052771541/fotogaleria-peru-iquitos-ica-imagenes/0-271-458/imagen1-a.jpg?filter=ds75'); ">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="card card-login">
+                        <form th:object="${crears}" th:action="@{/crearcuenta}" method="post" class="form" style="min-height: 720px;">
+                            <div class="card-header card-header-primary text-center">
+                                <h4 class="card-title">Crear cuenta</h4>
+                            </div>
+                            <p class="description text-center">Clinica Veterinaria</p>
+                            <div class="card-body mr-0 ml-0">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombres: <b class="text-danger">(*)</b></label>
+                                        <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="appaterno">Ap. Paterno: <b class="text-danger">(*)</b></label>
+                                        <input type="text" class="form-control" th:field="*{appaterno}" id="appaterno" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="apmaterno">Ap. Materno: <b class="text-danger">(*)</b></label>
+                                        <input type="text" class="form-control" th:field="*{apmaterno}" id="apmaterno" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="email">Email: <b class="text-danger">(*)</b></label>
+                                        <input type="text" class="form-control" id="email" th:field="*{email}" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="direccion">Dirección: <b class="text-danger">(*)</b></label>
+                                        <input type="text" class="form-control" th:field="*{direccion}" id="direccion" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="telefono">Teléfono: <b class="text-danger">(*)</b></label>
+                                        <input type="text" class="form-control" th:field="*{telefono}" id="telefono" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="contrasena">Contraseña: <b class="text-danger">(*)</b></label>
+                                        <input type="password" class="form-control" id="contrasena" th:field="*{contrasena}" placeholder="Escribe aquí">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer text-center">
+                                <button th:with="text='Registrar'" type="submit" th:text="${text}" class="btn btn-primary btn-wd btn-lg m-3">Registrar</button>
+                            </div>
+                        </form>
+                        <p th:text="${mensaje}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

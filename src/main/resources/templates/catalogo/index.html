@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'catalogo')}">
+<style>
+    
+</style>
+<body>
+    <div class="page-header" style="background-image: url('https://mizooland.com/wp-content/uploads/2015/04/Productos-Completos.jpg'); ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1 class="text-left">Nuestros productos</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main main-raised">
+        <div class="section section-basic">
+            <div class="container">
+                <div class="title">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2 class="font-weight-bold">Catálogo</h2>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control selectpicker" data-style="btn btn-link" style="margin-top: 20px; margin-bottom: 10px;">
+                                <option th:each="categoria : ${categorys}" th:text="${categoria.descripcion}">----</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div th:each="producto : ${products}" class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="../static/img/catalogo/${producto.imagen}" th:src="@{'/img/catalogo/'+${producto.imagen}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title" th:text="${producto.descripcion}">Nombre producto</h4>
+                                <p class="card-text">
+                                    <small class="text-muted">Stock <b class="text-danger"th:text="${producto.stock}">0</b> unidades</small>
+                                    <b class="float-right">S/. <b th:text="${producto.precio}"></b></b>
+                                </p>
+                                <button class="btn btn-info btn-round">
+                                    <i class="material-icons">visibility</i> Ver
+                                </button>
+                                <button class="btn btn-success btn-round">
+                                    <i class="material-icons">shopping_cart</i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

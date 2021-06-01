@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+<body>
+    <div id="carousel" style="margin-top: 50px;">
+        <div class="row-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../static/img/banner1.jpg" th:src="@{/img/banner1.jpg}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/img/banner2.jpg" th:src="@{/img/banner2.jpg}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../static/img/banner3.jpg" th:src="@{/img/banner3.jpg}" alt="First slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 mx-auto mt-4 mb-3">
+                <h2 class="font-weight-bold">Nuestra empresa</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-danger"><h4 class="card-title">Misión</h4></div>
+                    <div class="card-body">
+                        Promocionar el bienestar de los animales a través de la excelencia en medicina veterinaria, estándares médicos, educación y servicio sin precedentes
+                        para nuestros clientes y la comunidad, sin perder nunca de vista las necesidades cambiantes de nuestros pacientes y clientes.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-primary"><h4 class="card-title">Visión</h4></div>
+                    <div class="card-body">
+                        Proporcionar un servicio veterinario profesional local que busca salvaguardar la salud y el bienestar de los animales dentro de nuestra comunidad.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-8 mx-auto mt-4 mb-3">
+                <h2 class="font-weight-bold">Nuestra equipo</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="../static/img/foto1.png" th:src="@{/img/foto1.png}" alt="Circle Image" class="rounded-circle img-fluid">
+                        <h4 class="card-title">CMVP: 9999</h4>
+                        <p class="card-text">M.V Rosario Arevalo Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

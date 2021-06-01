@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+<body>
+    <div class="section section-signup page-header" style="margin-top: 50px; background-image: url('https://www.hola.com/imagenes/viajes/2014052771541/fotogaleria-peru-iquitos-ica-imagenes/0-271-458/imagen1-a.jpg?filter=ds75'); ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 mx-auto">
+                    <div class="card card-login">
+                        <form class="form" style="min-height: 300px;">
+                            <div class="card-header card-header-primary text-center">
+                                <h4 class="card-title">Recuperar contraseña</h4>
+                            </div>
+                            <p class="description text-center">Clinica Veterinaria</p>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">mail</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Correo electrónico">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">mail</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Repetir correo electrónico">
+                                </div>
+                            </div>
+                            <div class="footer text-center">
+                                <button class="btn btn-primary btn-wd btn-lg m-3">Recuperar</button><br>
+                                <a href="/ingresar" class="mt-1">Ingreso al sistema</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
