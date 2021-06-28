@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class IngresarController {
@@ -34,14 +35,14 @@ public class IngresarController {
     }
 
     @PostMapping("/ingresar")
-    public String createSubmitForm(Model model, @Valid Usuario objUser, HttpServletRequest request, BindingResult result) {
+    public String createSubmitForm(Model model, @Valid Usuario objUser, HttpServletRequest request, BindingResult result, HttpSession session) {
         String page = INGRESAR_INDEX;
         model.addAttribute(MODEL_LOGIN, new Usuario());
         if(result.hasFieldErrors()) {
             model.addAttribute(MODEL_MESSAGE, "No se ha podido loguear.");
         } else {
             Optional<Usuario> userDB = this.usersData.findById(objUser.getId());
-            if(userDB.isPresent()){
+            if (userDB.isPresent()) {
                 if(userDB.get().getContrasena().equals(objUser.getContrasena())){
                     model.addAttribute(MODEL_LOGIN, userDB.get());
                     model.addAttribute(MODEL_MESSAGE, "Usuario existe");
@@ -50,7 +51,7 @@ public class IngresarController {
                 }else{
                     model.addAttribute(MODEL_MESSAGE, "Contraseña no coincide");  
                 }
-            }else{
+            } else {
                 model.addAttribute(MODEL_MESSAGE, "Usuario no existe.");
             }
         }
