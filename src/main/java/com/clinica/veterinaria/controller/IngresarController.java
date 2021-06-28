@@ -1,9 +1,7 @@
 package com.clinica.veterinaria.controller;
 
 import java.util.Optional;
-
 import javax.validation.Valid;
-
 import com.clinica.veterinaria.model.Usuario;
 import com.clinica.veterinaria.reposity.UsuarioRepository;
 
@@ -20,6 +18,7 @@ import javax.servlet.http.HttpSession;
 public class IngresarController {
             
     private static final String INGRESAR_INDEX ="account/ingresar";
+    private static final String PERFIL_INDEX ="cliente/perfil";
     private static String MODEL_LOGIN = "login";
     private static String MODEL_MESSAGE = "mensaje";
     private final UsuarioRepository usersData;
@@ -47,6 +46,9 @@ public class IngresarController {
                     model.addAttribute(MODEL_LOGIN, userDB.get());
                     model.addAttribute(MODEL_MESSAGE, "Usuario existe");
                     request.getSession().setAttribute("user", objUser);
+                    request.getSession().setAttribute("nombre", userDB.get().getNombre());
+                    request.getSession().setAttribute("paterno", userDB.get().getAppaterno());
+                    request.getSession().setAttribute("materno", userDB.get().getApmaterno());
                     page = "cliente/dashboard";
                 }else{
                     model.addAttribute(MODEL_MESSAGE, "Contraseña no coincide");  
@@ -63,5 +65,14 @@ public class IngresarController {
 		request.getSession().invalidate();
 		return "redirect:/";
 	}
+
+    @GetMapping("/usuario/perfil")
+    public String perfil(Model model, HttpSession session) {
+        Usuario user = (Usuario)session.getAttribute("user");
+        return PERFIL_INDEX;
+    }
+
+
+
 
 }

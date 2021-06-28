@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout_cliente :: layout (~{::body},'home')}">
+<html lang="es" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +12,46 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card card-nav-tabs">
-                    <div class="card-header card-header-warning">Datos Personales</div>
+                    <div class="card-header card-header-success">Mi perfil</div>
                     <div class="card-body">
                         <p class="card-text">Mi información personal.</p>
                         <a href="/usuario/perfil" class="btn btn-primary">Ir a la página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-nav-tabs">
+                    <div class="card-header card-header-warning">Inicio</div>
+                    <div class="card-body">
+                        <p class="card-text">Mi información personal.</p>
+                        <a href="/" class="btn btn-primary">Ir a la página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-nav-tabs">
+                    <div class="card-header card-header-primary">Nosotros</div>
+                    <div class="card-body">
+                        <p class="card-text">Mi información personal.</p>
+                        <a href="/nosotros" class="btn btn-primary">Ir a la página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-nav-tabs">
+                    <div class="card-header card-header-danger">Sedes</div>
+                    <div class="card-body">
+                        <p class="card-text">Mi información personal.</p>
+                        <a href="/sedes" class="btn btn-primary">Ir a la página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-nav-tabs">
+                    <div class="card-header card-header-info">Servicios</div>
+                    <div class="card-body">
+                        <p class="card-text">Mi información personal.</p>
+                        <a href="/servicios" class="btn btn-primary">Ir a la página</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +66,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="card card-nav-tabs">
-                    <div class="card-header card-header-warning">Mis ordenes</div>
+                    <div class="card-header card-header-rose">Mis ordenes</div>
                     <div class="card-body">
                         <p class="card-text">Mis pedidos realizados.</p>
                         <a href="/catalogo/ordenes" class="btn btn-primary">Ir a la página</a>
@@ -39,19 +75,10 @@
             </div>
             <div class="col-sm-4">
                 <div class="card card-nav-tabs">
-                    <div class="card-header card-header-warning">Contraseña</div>
+                    <div class="card-header">Mis mensajes</div>
                     <div class="card-body">
-                        <p class="card-text">Actualiza tus credenciales.</p>
-                        <a href="/usuario/password" class="btn btn-primary">Ir a la página</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card card-nav-tabs">
-                    <div class="card-header card-header-warning">Cerrar sesión</div>
-                    <div class="card-body">
-                        <p class="card-text">Finaliza.</p>
-                        <a href="/logout" class="btn btn-primary">Cerrar</a>
+                        <p class="card-text">Mis pedidos realizados.</p>
+                        <a href="/usuario/mensaje" class="btn btn-primary">Ir a la página</a>
                     </div>
                 </div>
             </div>
