@@ -14,6 +14,8 @@ import org.springframework.validation.BindingResult;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import java.util.List;
+
 @Controller
 public class IngresarController {
             
@@ -46,9 +48,9 @@ public class IngresarController {
                     model.addAttribute(MODEL_LOGIN, userDB.get());
                     model.addAttribute(MODEL_MESSAGE, "Usuario existe");
                     request.getSession().setAttribute("user", objUser);
+                    request.getSession().setAttribute("id", userDB.get().getId());
                     request.getSession().setAttribute("nombre", userDB.get().getNombre());
                     request.getSession().setAttribute("paterno", userDB.get().getAppaterno());
-                    request.getSession().setAttribute("materno", userDB.get().getApmaterno());
                     page = "cliente/dashboard";
                 }else{
                     model.addAttribute(MODEL_MESSAGE, "Contraseña no coincide");  
@@ -67,8 +69,10 @@ public class IngresarController {
 	}
 
     @GetMapping("/usuario/perfil")
-    public String perfil(Model model, HttpSession session) {
-        Usuario user = (Usuario)session.getAttribute("user");
+    public String perfil(Model model, HttpSession session, HttpServletRequest request) {
+        String codigoVerificacion = request.getSession().getId();
+        //List<Usuario> listItems = this.usersData.findById();
+        model.addAttribute("usuariox", codigoVerificacion);
         return PERFIL_INDEX;
     }
 
