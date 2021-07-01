@@ -21,6 +21,7 @@ public class IngresarController {
             
     private static final String INGRESAR_INDEX ="account/ingresar";
     private static final String PERFIL_INDEX ="cliente/perfil";
+    private static final String INDEX_DASHBOARD ="cliente/dashboard"; 
     private static String MODEL_LOGIN = "login";
     private static String MODEL_MESSAGE = "mensaje";
     private final UsuarioRepository usersData;
@@ -75,6 +76,17 @@ public class IngresarController {
         model.addAttribute("usuariox", codigoVerificacion);
         return PERFIL_INDEX;
     }
+
+    @GetMapping("/usuario/dashboard")
+    public String add(HttpSession session, Model model){
+        Usuario user = (Usuario)session.getAttribute("user"); 
+        if(user == null) {
+            model.addAttribute("mensaje", "Debe loguearse antes de agregar");
+            model.addAttribute(MODEL_LOGIN, new Usuario());
+            return INGRESAR_INDEX;
+        }   
+        return INDEX_DASHBOARD;
+    }  
 
 
 
