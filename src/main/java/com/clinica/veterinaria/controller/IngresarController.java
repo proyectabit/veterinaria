@@ -69,19 +69,23 @@ public class IngresarController {
 		return "redirect:/";
 	}
 
-    @GetMapping("/usuario/perfil")
-    public String perfil(Model model, HttpSession session, HttpServletRequest request) {
-        String codigoVerificacion = request.getSession().getId();
-        //List<Usuario> listItems = this.usersData.findById();
-        model.addAttribute("usuariox", codigoVerificacion);
-        return PERFIL_INDEX;
-    }
 
-    @GetMapping("/usuario/dashboard")
-    public String add(HttpSession session, Model model){
+    @GetMapping("/usuario/perfil")
+    public String perfil(HttpSession session, Model model){
         Usuario user = (Usuario)session.getAttribute("user"); 
         if(user == null) {
-            model.addAttribute("mensaje", "Debe loguearse antes de agregar");
+            model.addAttribute("mensaje", "Debe loguearse antes de ir a la página perfil.");
+            model.addAttribute(MODEL_LOGIN, new Usuario());
+            return INGRESAR_INDEX;
+        }   
+        return PERFIL_INDEX;
+    }  
+
+    @GetMapping("/usuario/dashboard")
+    public String dashboard(HttpSession session, Model model){
+        Usuario user = (Usuario)session.getAttribute("user"); 
+        if(user == null) {
+            model.addAttribute("mensaje", "Debe loguearse antes de ir a la página principal.");
             model.addAttribute(MODEL_LOGIN, new Usuario());
             return INGRESAR_INDEX;
         }   

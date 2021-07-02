@@ -7,6 +7,8 @@ import com.clinica.veterinaria.model.Producto;
 import com.clinica.veterinaria.model.Categoria;
 import com.clinica.veterinaria.reposity.ProductoRepository;
 import com.clinica.veterinaria.reposity.CategoriaRepository;
+import com.clinica.veterinaria.model.Usuario;
+import com.clinica.veterinaria.reposity.UsuarioRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +21,9 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class CatalogoController {
     
-    private static final String INDEX ="catalogo/index"; 
+    private static final String INDEX ="catalogo/index";
+    private static final String INDEX_VER ="catalogo/individual";
+    private static final String INDEX_CARRITO ="catalogo/carrito_add";
     private final ProductoRepository productsData;
     private final CategoriaRepository categoryData;
     
@@ -39,5 +43,17 @@ public class CatalogoController {
         model.addAttribute("categorys", listCategoria);
         return INDEX;
     } 
+
+    @GetMapping("/catalogo/ver/{id}")
+    public String ver(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("products", "");
+        return INDEX_VER;
+    }
+
+    @GetMapping("/catalogo/carrito/add/{id}")
+    public String carrito(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("products", "");
+        return INDEX_CARRITO;
+    }
 
 }
