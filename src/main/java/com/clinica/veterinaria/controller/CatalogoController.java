@@ -46,9 +46,14 @@ public class CatalogoController {
 
     @GetMapping("/catalogo/ver/{id}")
     public String ver(@PathVariable("id") Integer id, Model model){
-        model.addAttribute("products", "");
+        Producto productSeleccionado = productsData.getOne(id);
+        model.addAttribute("product", productSeleccionado);
         return INDEX_VER;
     }
+
+
+
+
 
     @GetMapping("/catalogo/carrito/add/{id}")
     public String carrito(@PathVariable("id") Integer id, Model model){
