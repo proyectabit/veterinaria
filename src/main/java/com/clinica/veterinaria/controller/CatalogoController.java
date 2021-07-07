@@ -47,7 +47,9 @@ public class CatalogoController {
     @GetMapping("/catalogo/ver/{id}")
     public String ver(@PathVariable("id") Integer id, Model model){
         Producto productSeleccionado = productsData.getOne(id);
+        List<Producto> listProductoCategoria = this.productsData.getAllActiveProductosByCategory(productSeleccionado.getCategoria(), productSeleccionado.getId());
         model.addAttribute("product", productSeleccionado);
+        model.addAttribute("productCategoria", listProductoCategoria);
         return INDEX_VER;
     }
 

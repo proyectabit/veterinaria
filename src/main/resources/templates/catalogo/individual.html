@@ -48,60 +48,26 @@
                 <div class="col-sm-12">
                     <h3 class="font-weight-bold">Productos similares</h3>
                     <div class="row">
-                        <div class="col-md-4">
+
+                        <div th:each="producto : ${productCategoria}" class="col-md-4">
                             <div class="card">
-                                <img class="card-img-top" src="~/img/@Model.Imagen" alt="Card image cap">
+                                <img class="card-img-top" src="../static/img/catalogo/${producto.imagen}" th:src="@{'/img/catalogo/'+${producto.imagen}}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">@Model.Descripcion</h4>
+                                    <h4 class="card-title" th:text="${producto.descripcion}"></h4>
                                     <p class="card-text">
-                                        <small class="text-muted">Stock <b class="text-danger">@Model.Stock</b> unidades</small>
-                                        <b class="float-right">S/. <b>@Model.Precio</b></b>
+                                        <small class="text-muted">Stock <b class="text-danger" th:text="${producto.stock}"></b> unidades</small>
+                                        <b class="float-right">S/. <b th:text="${producto.precio}"></b></b>
                                     </p>
-                                    <a class="btn btn-info btn-round" asp-controller="productos" asp-action="detalle" asp-route-id="@Model.Id">
+                                    <a th:href="@{'/catalogo/ver/__${producto.id}__'}" class="btn btn-info btn-round" role="button">
                                         <i class="material-icons">visibility</i> Ver
                                     </a>
-                                    <a class="btn btn-success btn-round">
-                                        <i class="material-icons">shopping_cart</i> Añadir
+                                    <a th:href="@{'/catalogo/carrito/add/__${producto.id}__'}" class="btn btn-success btn-round" role="button">
+                                        <i class="material-icons">shopping_cart</i> Agregar
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img class="card-img-top" src="~/img/@Model.Imagen" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">@Model.Descripcion</h4>
-                                    <p class="card-text">
-                                        <small class="text-muted">Stock <b class="text-danger">@Model.Stock</b> unidades</small>
-                                        <b class="float-right">S/. <b>@Model.Precio</b></b>
-                                    </p>
-                                    <a class="btn btn-info btn-round" asp-controller="productos" asp-action="detalle" asp-route-id="@Model.Id">
-                                        <i class="material-icons">visibility</i> Ver
-                                    </a>
-                                    <a class="btn btn-success btn-round">
-                                        <i class="material-icons">shopping_cart</i> Añadir
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img class="card-img-top" src="~/img/@Model.Imagen" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">@Model.Descripcion</h4>
-                                    <p class="card-text">
-                                        <small class="text-muted">Stock <b class="text-danger">@Model.Stock</b> unidades</small>
-                                        <b class="float-right">S/. <b>@Model.Precio</b></b>
-                                    </p>
-                                    <a class="btn btn-info btn-round" asp-controller="productos" asp-action="detalle" asp-route-id="@Model.Id">
-                                        <i class="material-icons">visibility</i> Ver
-                                    </a>
-                                    <a class="btn btn-success btn-round">
-                                        <i class="material-icons">shopping_cart</i> Añadir
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
