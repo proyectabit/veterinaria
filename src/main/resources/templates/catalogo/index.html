@@ -16,13 +16,8 @@
     <div class="main main-raised">
         <div class="section section-basic">
             <div class="container">
-                <div class="title">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h2 class="font-weight-bold">Catálogo</h2>
-                        </div>
-                    </div>
-                </div>
+                <div class="row"><div class="col-md-8"><h2 class="font-weight-bold">Catálogo</h2></div></div>
+                
                 <div class="row text-center">
                     <div class="col-md-12">
                         <a class="btn btn-success btn-sm mr-3 btn-round" th:if="${categoria.id == 1}" th:each="categoria : ${categorys}" th:text="${categoria.descripcion}" th:href="@{'/catalogo/categoria/__${categoria.id}__'}"></a>
@@ -30,8 +25,13 @@
                     </div>
                 </div>
                 <p class="mt-3">Categoria: <b>Todas las categorias</b></p>
-                <div class="row">
 
+                <div class="alert alert-warning" role="alert" th:if="${mensaje != ''}">
+                    <h4 class="alert-heading"><i class="fa fa-envelope"></i> Mensaje!</h4>
+                    <p th:text="${mensaje}"></p>
+                </div>
+
+                <div class="row">
                     <div th:each="producto : ${products}" class="col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="../static/img/catalogo/${producto.imagen}" th:src="@{'/img/catalogo/'+${producto.imagen}}" alt="Card image cap">
@@ -45,7 +45,7 @@
                                     <i class="material-icons">visibility</i> Ver
                                 </a>
                                 <a th:href="@{'/catalogo/carrito/add/__${producto.id}__'}" class="btn btn-success btn-round" role="button">
-                                    <i class="material-icons">shopping_cart</i> Agregar
+                                    <i class="material-icons">shopping_cart</i> Añadir
                                 </a>
                             </div>
                         </div>
