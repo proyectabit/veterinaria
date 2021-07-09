@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'catalogo')}">
+<body>
+    <div class="page-header" style="background-image: url('https://mizooland.com/wp-content/uploads/2015/04/Productos-Completos.jpg'); ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="brand">
+                        <h1 class="text-left">Nuestros productos</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main main-raised">
+        <div class="section section-basic">
+            <div class="container">
+                <div class="title">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2 class="font-weight-bold">Catálogo</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <a class="btn btn-info btn-sm mr-3 btn-round" th:if="${categoria.id == 1}" th:each="categoria : ${categorys}" th:text="${categoria.descripcion}" th:href="@{'/catalogo/index'}"></a>
+                        <a class="btn btn-success btn-sm mr-3 btn-round" th:if="${categoria.id == category} and ${categoria.id != 1}" th:each="categoria : ${categorys}" th:text="${categoria.descripcion}" th:href="@{'/catalogo/categoria/__${categoria.id}__'}"></a>
+                        <a class="btn btn-info btn-sm mr-3 btn-round" th:if="${categoria.id != category} and ${categoria.id != 1}" th:each="categoria : ${categorys}" th:text="${categoria.descripcion}" th:href="@{'/catalogo/categoria/__${categoria.id}__'}"></a>
+                    </div>
+                </div>
+                <p class="mt-3">Categoria: <b th:each="categoria : ${categorys}" th:if="${categoria.id == category}" th:text="${categoria.descripcion}"></b></p>
+                <div class="row">
+
+                    <div th:each="producto : ${productCategoria}" class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="../static/img/catalogo/${producto.imagen}" th:src="@{'/img/catalogo/'+${producto.imagen}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title" th:text="${producto.descripcion}"></h4>
+                                <p class="card-text">
+                                    <small class="text-muted">Stock <b class="text-danger" th:text="${producto.stock}"></b> unidades</small>
+                                    <b class="float-right">S/. <b th:text="${producto.precio}"></b></b>
+                                </p>
+                                <a th:href="@{'/catalogo/ver/__${producto.id}__'}" class="btn btn-info btn-round" role="button">
+                                    <i class="material-icons">visibility</i> Ver
+                                </a>
+                                <a th:href="@{'/catalogo/carrito/add/__${producto.id}__'}" class="btn btn-success btn-round" role="button">
+                                    <i class="material-icons">shopping_cart</i> Agregar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

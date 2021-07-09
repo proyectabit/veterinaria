@@ -16,4 +16,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer>{
 
     @Query(nativeQuery = true, value = "SELECT * FROM Producto o WHERE o.categoria = :searchCategory And o.id != :searchId And o.estado='1' ORDER BY o.id DESC LIMIT 3")
     List<Producto> getAllActiveProductosByCategory(@Param("searchCategory") Integer searchCategory, @Param("searchId") Integer searchId);
+
+    @Query(nativeQuery = true, value = "SELECT * FROM Producto o WHERE o.categoria = :searchCategory And o.estado='1'")
+    List<Producto> getAllActiveProductosByURLCategory(@Param("searchCategory") Integer searchCategory);
 }

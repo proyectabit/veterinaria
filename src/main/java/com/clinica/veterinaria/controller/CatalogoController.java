@@ -23,6 +23,7 @@ public class CatalogoController {
     
     private static final String INDEX ="catalogo/index";
     private static final String INDEX_VER ="catalogo/individual";
+    private static final String INDEX_CATEGORIA ="catalogo/categoria";
     private static final String INDEX_CARRITO ="catalogo/carrito_add";
     private final ProductoRepository productsData;
     private final CategoriaRepository categoryData;
@@ -53,7 +54,15 @@ public class CatalogoController {
         return INDEX_VER;
     }
 
-
+    @GetMapping("/catalogo/categoria/{id}")
+    public String categoria(@PathVariable("id") Integer id, Model model){
+        List<Producto> listProductoCategoria = this.productsData.getAllActiveProductosByURLCategory(id);
+        List<Categoria> listCategoria = this.categoryData.getAllActiveCategorias();
+        model.addAttribute("productCategoria", listProductoCategoria);
+        model.addAttribute("categorys", listCategoria);
+        model.addAttribute("category", id);
+        return INDEX_CATEGORIA;
+    }
 
 
 
