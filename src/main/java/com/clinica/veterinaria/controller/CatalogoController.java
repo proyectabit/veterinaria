@@ -26,16 +26,21 @@ public class CatalogoController {
     private static final String INDEX ="catalogo/index";
     private static final String INDEX_VER ="catalogo/individual";
     private static final String INDEX_CATEGORIA ="catalogo/categoria";
+    private static final String MIS_ORDENES_INDEX ="catalogo/ordenes";
     private final ProductoRepository productsData;
     private final CategoriaRepository categoryData;
     private final ProformaRepository proformaData;
     
-
     public CatalogoController(ProductoRepository productsData, CategoriaRepository categoryData, ProformaRepository proformaData){
         this.productsData = productsData;
         this.categoryData = categoryData;
         this.proformaData = proformaData;
     }      
+
+    @GetMapping("/catalogo/ordenes")
+    public String ordenes(Model model) {
+        return MIS_ORDENES_INDEX;
+    }
 
     @GetMapping("/catalogo/index")
     public String index(@RequestParam(defaultValue="") String searchName, Model model){
