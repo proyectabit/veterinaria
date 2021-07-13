@@ -1,0 +1,23 @@
+.nav-responsive {
+    width: 65%;
+    display: block;
+    max-width: 300px;
+    position: fixed;
+    top: 10;
+    left: 0;
+    height: 100vh;
+    z-index: 700;
+    background-color: #28a745 !important;
+    color: #fff;
+    transition: 2s linear all;
+}
+.nav-responsive-hidden{
+    display: none;
+}
+
+.hr-white {
+    /* background-color: aliceblue; */
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding:3% 0;
+}

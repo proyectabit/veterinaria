@@ -1,0 +1,64 @@
+.name-profile {
+    border-bottom: 3px solid  #28a745;
+        padding: 0;
+        font-weight: 600;
+}
+.image-profile {
+    width:20vw;
+    max-width: 200px;
+    max-height: 200px;
+    height:20vw;
+}
+
+
+ @media (min-width: 450px) { 
+    .name-profile {
+        font-size : 23px;
+      }
+
+  }
+ /* @media screen and (max-width: 200px){
+    .name-profile {
+      font-size : 90px;
+    }
+ } */
+
+ .box-gray {
+    background: #FBFBFB;
+    border: 1px solid rgba(209, 209, 209, 0.69);
+    box-sizing: border-box;
+    /* height:200px; */
+    padding:18px;
+ }
+.box-gray input {
+    color:  rgba(0, 0, 0, 0.61);
+    border: 1px solid #EEEEEE;
+
+}
+
+ .box-gray table tr td {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    padding:3px;
+    /* identical to box height */
+    
+    text-align: justify;
+    
+    color: rgba(0, 0, 0, 0.51);
+ }
+ .box-gray span {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 19px;
+   margin-bottom: 8px;;
+    color: #000000;
+ }
+ .form-input input[type="text"],
+ .form-input input[type="password"] {
+    width: 100%;
+ }

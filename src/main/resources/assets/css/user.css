@@ -1,0 +1,61 @@
+.box-gray {
+   background: #FBFBFB;
+   border: 1px solid rgba(209, 209, 209, 0.69);
+   box-sizing: border-box;
+   /* height:200px; */
+   padding: 18px;
+}
+
+.box-gray input {
+   color: rgba(0, 0, 0, 0.61);
+   border: 1px solid #EEEEEE;
+   padding: 3px;
+}
+
+.box-gray table tr td {
+   font-family: Inter;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 17px;
+   padding: 8px;
+   /* identical to box height */
+   text-align: justify;
+   color: rgba(0, 0, 0, 0.51);
+}
+
+.box-gray span {
+   font-family: Inter;
+   font-style: normal;
+   font-weight: 600;
+   font-size: 19px;
+   line-height: 19px;
+   margin-bottom: 8px;
+   ;
+   color: #000000;
+}
+
+.point-green {
+   width: 14px;
+   height: 14px;
+   background: #28A745;
+   border-radius: 100%;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+
+.title-delete {
+   font-weight: 700;
+   color: black;
+   font-size: 20px;
+}
+
+.title-blue {
+   color: #3273DC;
+   font-weight: 700;
+   font-size: 24px;
+}
+
+.form-input input[type="text"], .form-input input[type="password"] {
+   width: 100%;
+}

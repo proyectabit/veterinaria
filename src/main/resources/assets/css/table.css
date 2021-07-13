@@ -1,0 +1,30 @@
+.table-color tbody tr:nth-of-type(odd) {
+    background-color: #F8F9FA;
+}
+.table-color tbody tr td {
+    font-size:10px;
+}
+.table-color thead  tr th {
+    font-size: 18px;
+}
+
+@media (min-width: 450px) { 
+    .table-color tbody tr td {
+        font-size : 14px;
+      }
+
+  }
+.title-blue{
+    color:#3273DC;
+    font-weight: 700;
+    font-size:24px;
+}
+.table-scroll {
+    overflow: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.table-scroll::-webkit-scrollbar {
+    display: none;
+  }
