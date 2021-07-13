@@ -33,5 +33,5 @@ public class Proforma {
     private BigDecimal precio;
     private Integer cantidad; 
     @Builder.Default
-    private String status="PENDING";  
+    private String status="PENDING";
 }

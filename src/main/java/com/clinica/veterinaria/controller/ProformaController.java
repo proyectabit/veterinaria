@@ -27,9 +27,14 @@ public class ProformaController {
 
     @GetMapping("/proforma/index")
     public String index(Model model, HttpSession session){
-        Usuario user = (Usuario)session.getAttribute("user"); 
-        List<Proforma> listItems = this.proformaData.findItemsByUsuario(user);
-        model.addAttribute("proformas",listItems);
+        Usuario user = (Usuario)session.getAttribute("user");
+        if(user == null) {
+            model.addAttribute("verifica", "Debe iniciar sesión para ver tu carrito de compras.");
+        } else {
+            model.addAttribute("verifica", "");
+            List<Proforma> listItems = this.proformaData.findItemsByUsuario(user);
+            model.addAttribute("proformas",listItems);
+        }
         return VIEW_INDEX;
     }    
 

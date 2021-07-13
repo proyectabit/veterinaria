@@ -2,8 +2,11 @@ package com.clinica.veterinaria.controller;
 
 import java.util.Optional;
 import javax.validation.Valid;
+import java.util.List;
 import com.clinica.veterinaria.model.Usuario;
 import com.clinica.veterinaria.reposity.UsuarioRepository;
+import com.clinica.veterinaria.model.Proforma;
+import com.clinica.veterinaria.reposity.ProformaRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +26,11 @@ public class IngresarController {
     private static String MODEL_LOGIN = "login";
     private static String MODEL_MESSAGE = "mensaje";
     private final UsuarioRepository usersData;
+    private final ProformaRepository proformaData;
 
-    public IngresarController(UsuarioRepository usersData){
+    public IngresarController(UsuarioRepository usersData, ProformaRepository proformaData){
         this.usersData = usersData;
+        this.proformaData = proformaData;
     }
 
     @GetMapping("/ingresar")
@@ -50,6 +55,9 @@ public class IngresarController {
                     request.getSession().setAttribute("id", userDB.get().getId());
                     request.getSession().setAttribute("nombre", userDB.get().getNombre());
                     request.getSession().setAttribute("paterno", userDB.get().getAppaterno());
+                    Usuario user = (Usuario)session.getAttribute("user");
+                    List<Proforma> count_carrito = this.proformaData.findItemsByUsuario(user);
+                    request.getSession().setAttribute("count_carrito", count_carrito.size());
                     page = "cliente/dashboard";
                 }else{
                     model.addAttribute(MODEL_MESSAGE, "Contraseña no coincide");  

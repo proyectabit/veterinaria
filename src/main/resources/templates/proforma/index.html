@@ -12,35 +12,46 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mt-5 mb-5">
-        <h2>Carrito</h2><br/>
-        <a href="/pago/create" class="btn btn-primary">Pagar</a>
-        <table id="example" class="table table-bordered table-responsive" style="width: 100%">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Descripcion</th>
-              <th>Precio</th>
-              <th>Cantidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="proforma : ${proformas}">
-                <td th:text="${proforma.product.id}"></td>
-                <td th:text="${proforma.product.descripcion}"></td>
-                <td th:text="${proforma.precio}"></td>
-                <td>
+        <h2 class="mt-5"><i class="fa fa-shopping-cart"></i> Carrito</h2><br/>
+
+        <div class="alert alert-warning" role="alert" th:if="${verifica != ''}">
+          <h4 class="alert-heading"><i class="fa fa-envelope"></i> Mensaje!</h4>
+          <p th:text="${verifica}"></p>
+        </div>
+
+        <div th:if="${verifica == ''}">
+          <h3 class="font-weight-bold">Productos seleccionados</h3>
+          <hr>
+          <div class="row" th:each="proforma : ${proformas}">
+            <div class="col-md-5">
+              <div class="card">
+                <img class="card-img-top" src="../static/img/catalogo/${proforma.product.imagen}" th:src="@{'/img/catalogo/'+${proforma.product.imagen}}" alt="Card image cap">
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h5 style="font-weight:bold;" th:text="${proforma.product.descripcion}"></h5>
+                  <small class="text-muted"><b class="text-danger" th:text="${proforma.cantidad}"></b> unidades</small>
+                  <p style="margin: 15px 0px; color: blue; font-size: 1.3em; font-weight: bold;">S/. <b th:text="${proforma.precio}"></b></p>
                   <form th:object="${proforma}" th:action="@{/proforma/update}" method="post">
-                    <input type="number" class="form-control" name="cantidad"
-                      autocomplete="off" th:value="${proforma.cantidad}"
-                      min="1" max="100"/>
-                    <input type="hidden" name="id" th:value="${proforma.id}"/>
-                    <button th:with="text='Update'" class="btn btn-primary" type="submit" th:text="${text}"/>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input type="number" class="form-control" name="cantidad" autocomplete="off" th:value="${proforma.cantidad}" min="1" max="100"/>
+                        <input type="hidden" name="id" th:value="${proforma.id}"/>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-edit"></i> Editar</button>
+                      </div>
+                    </div>
                   </form>
-                </td>
-            </tr>
-          </tbody>
-        </table>
-        <p th:text="${mensaje}" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="/pago/create" class="btn btn-info float-right"><i class="fa fa-credit-card"></i> Pagar</a>
+        </div>
       </div>
     </div>
   </div>
