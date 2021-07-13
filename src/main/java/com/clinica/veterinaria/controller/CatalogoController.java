@@ -10,7 +10,6 @@ import com.clinica.veterinaria.reposity.ProductoRepository;
 import com.clinica.veterinaria.reposity.ProformaRepository;
 import com.clinica.veterinaria.reposity.CategoriaRepository;
 import com.clinica.veterinaria.model.Usuario;
-// import com.clinica.veterinaria.reposity.UsuarioRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -67,7 +67,7 @@ public class CatalogoController {
     }
 
     @GetMapping("/catalogo/carrito/add/{id}")
-    public String add(@PathVariable("id") Integer id, HttpSession session, Model model){
+    public String add(@PathVariable("id") Integer id, HttpSession session, Model model, HttpServletRequest request){
         Usuario user = (Usuario)session.getAttribute("user");
         List<Producto> listProducto = this.productsData.getAllActiveProductos();
         List<Categoria> listCategoria = this.categoryData.getAllActiveCategorias();
@@ -90,6 +90,8 @@ public class CatalogoController {
                 Proforma itemCarritoExistente=item.get();
                 itemCarritoExistente.setCantidad(itemCarritoExistente.getCantidad()+1);
                 proformaData.save(itemCarritoExistente);
+                List<Proforma> count_carrito = this.proformaData.findItemsByUsuario(user);
+                session.setAttribute("count_carrito", count_carrito.size());
                 model.addAttribute("mensaje", "Se adiciono el producto a tu carrito de compras.");
             }
         }   
